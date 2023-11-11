@@ -60,6 +60,7 @@ const uploadToFirebase = async (file, fileName) => {
 // Setting up multer as a middleware to grab photo uploads
 const upload = multer({ storage: multer.memoryStorage() });
 
+//firebase upload image
 app.post("/upload", upload.single("image"), async (req, res) => {
   try {
     const originalFileName = req.file.originalname;

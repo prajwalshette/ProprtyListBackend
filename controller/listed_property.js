@@ -5,8 +5,8 @@ exports.createProperty = async (req, res) => {
   try {
     const property = new Property(req.body);
 
-    console.log("PROPERTY");
-    console.log(property);
+    // console.log("PROPERTY");
+    // console.log(property);
     await property.save();
     res.status(201).json(property);
   } catch (err) {
@@ -37,23 +37,7 @@ exports.getPropertyById = async (req, res) => {
   }
 };
 
-// Update a property
-// exports.updateProperty = async (req, res) => {
-//   try {
-//     const property = await Property.findByIdAndUpdate(req.params.id, req.body, {
-//       new: true,
-//       runValidators: true,
-//     });
-//     if (!property) {
-//       return res.status(404).json({ error: 'Property not found' });
-//     }
-//     res.status(200).json(property);
-//   } catch (err) {
-//     res.status(400).json({ error: err.message });
-//   }
-// };
-
-
+//update property by id
 exports.updateProperty = async (req, res) => {
   try {
     const property = await Property.findByIdAndUpdate(req.params.id, req.body, {
@@ -75,22 +59,7 @@ exports.updateProperty = async (req, res) => {
 
 
 
-
-
-
 // Delete a property
-// exports.deleteProperty = async (req, res) => {
-//   try {
-//     const property = await Property.findByIdAndDelete(req.params.id);
-//     if (!property) {
-//       return res.status(404).json({ error: 'Property not found' });
-//     }
-//     res.status(204).json();  
-//     res.send("Delete Successfully....");
-//   } catch (err) {
-//     res.status(500).json({ error: 'Server error' });
-//   }
-// };
 
 exports.deleteProperty = async (req, res) => {
   try {
@@ -104,7 +73,6 @@ exports.deleteProperty = async (req, res) => {
   }
 };
 
- 
 
 
 // Controller to get properties by email

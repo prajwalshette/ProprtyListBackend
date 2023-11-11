@@ -27,22 +27,6 @@ mongoose.connect(process.env.MONGO_URI)
 // app.use("/api", routes);
 app.use(routes);
 
-//image upload
-// const storage=multer.diskStorage({
-//     destination:(req,image,fn)=>{
-//         fn(null,"images")
-//     },
-//     filename:(req,image,fn)=>{
-//         fn(null,req.body.img)
-//         // fn(null,"image1.jpg")
-//     }
-// })
-
-// const upload=multer({storage:storage})
-// app.post("/upload",upload.single("image"),(req,res)=>{
-//     // console.log(req.body)
-//     res.status(200).json("Image has been uploaded successfully!")
-// }) 
 
 
 // Add the following Firebase imports
@@ -58,13 +42,6 @@ const firebaseConfig = {
     appId: process.env.FIREBASE_APP_ID,
     measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 
-    // apiKey: "AIzaSyCNf-6qK2VgjptJweV_Wd4PdBbrj553S8g",
-    // authDomain: "propertylisting-ace88.firebaseapp.com",
-    // projectId: "propertylisting-ace88",
-    // storageBucket: "propertylisting-ace88.appspot.com",
-    // messagingSenderId: "206241591735",
-    // appId: "1:206241591735:web:8d2125a36d941fd96b3832",
-    // measurementId: "G-EY51TGJLMN"
 };
 
 
